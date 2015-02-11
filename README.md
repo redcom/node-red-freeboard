@@ -1,4 +1,4 @@
-# Node-RED
+# Node-RED + freeboard
 
 http://nodered.org
 
