@@ -17,8 +17,9 @@
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
 //var fs = require("fs");
+var httpStatic =  __dirname + '/dashboard/';
+var httpRoot =  '/admin';
 
- 
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
     uiPort: 1880,
@@ -50,7 +51,7 @@ module.exports = {
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
     //flowFilePretty: true,
-    
+
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
     //userDir: '/home/nol/.node-red/',
@@ -73,34 +74,34 @@ module.exports = {
     // can be used to specifiy a different root path. If set to false, this is
     // disabled.
     //httpNodeRoot: '/nodes',
-    
+
     // To password protect the node-defined HTTP endpoints, the following property
     // can be used.
     // The password must be an md5 hash  eg.. 5f4dcc3b5aa765d61d8327deb882cf99 ('password')
     //httpNodeAuth: {user:"user",pass:"5f4dcc3b5aa765d61d8327deb882cf99"},
-    
+
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    //httpStatic: '/home/nol/node-red-dashboard/',
+    httpStatic: httpStatic,
 
     // To password protect the static content, the following property can be used.
     // The password must be an md5 hash  eg.. 5f4dcc3b5aa765d61d8327deb882cf99 ('password')
     //httpStaticAuth: {user:"user",pass:"5f4dcc3b5aa765d61d8327deb882cf99"},
-    
+
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
-    //httpRoot: '/red',
-    
+    httpRoot: httpRoot,
+
     // The following property can be used in place of 'httpAdminAuth' and 'httpNodeAuth',
     // to apply the same authentication to both parts.
     //httpAuth: {user:"user",pass:"5f4dcc3b5aa765d61d8327deb882cf99"},
-    
+
     // The following property can be used to disable the editor. The admin API
     // is not affected by this option. To disable both the editor and the admin
     // API, use either the httpRoot or httpAdminRoot properties
     //disableEditor: false,
-    
+
     // The following property can be used to enable HTTPS
     // See http://nodejs.org/api/https.html#https_https_createserver_options_requestlistener
     // for details on its contents.
@@ -120,7 +121,7 @@ module.exports = {
     //    origin: "*",
     //    methods: "GET,PUT,POST,DELETE"
     //},
-    
+
     // Anything in this hash is globally available to all functions.
     // It is accessed as context.global.
     // eg:
@@ -133,8 +134,8 @@ module.exports = {
         // bonescript:require('bonescript'),
         // arduino:require('duino')
     },
-    
-    
+
+
     // The following property can be used to order the categories in the editor
     // palette. If a node's category is not in the list, the category will get
     // added to the end of the palette.
@@ -153,7 +154,7 @@ module.exports = {
             // debug - record information which is more verbose than info + info + warn + error + fatal errors
             // trace - record very detailed logging + debug + info + warn + error + fatal errors
             level: "info",
-            
+
             // Whether or not to include metric events in the log output
             metrics: false
         }
